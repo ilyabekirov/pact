@@ -3,22 +3,22 @@
 require 'rails_helper'
 
 RSpec.describe Users::Create do
-  describe '.run' do
-    let(:valid_params) do
-      {
-        name: 'Иван',
-        surname: 'Иванов',
-        patronymic: 'Иванович',
-        email: 'ivan@example.com',
-        age: 30,
-        nationality: 'Russian',
-        country: 'Russia',
-        gender: 'male',
-        interests: ['programming'],
-        skills: 'Ruby, Rails'
-      }
-    end
+  let(:valid_params) do
+    {
+      name: 'Иван',
+      surname: 'Иванов',
+      patronymic: 'Иванович',
+      email: 'ivan@example.com',
+      age: 30,
+      nationality: 'Russian',
+      country: 'Russia',
+      gender: 'male',
+      interests: ['programming'],
+      skills: 'Ruby, Rails'
+    }
+  end
 
+  describe '.run' do
     context 'with valid params' do
       it 'creates a user with interests and skills' do
         outcome = described_class.run(valid_params)

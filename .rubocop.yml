@@ -93,6 +93,7 @@ Metrics/BlockLength:
   Exclude:
     - config/**/*
     - test/**/*
+    - spec/**/*
 
 Metrics/ClassLength:
   Max: 200
