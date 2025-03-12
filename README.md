@@ -1,4 +1,4 @@
-# pact
+# Pact
 
 This is a Rails 8.0 app.
 
@@ -66,3 +66,13 @@ bin/rake fix
 > A small number of Rubocop's auto-corrections are considered "unsafe" and may
 > occasionally produce incorrect results. After running `fix`, you should
 > review the changes and make sure the code still works as intended.
+
+### Documentation
+
+Generate documentation:
+```
+rails rswag
+```
+See documentation with all endpoints
+
+The app will be located at <http://localhost:3000/api-docs/index.html>.

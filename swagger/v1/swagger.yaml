@@ -1,0 +1,133 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+  description: API for managing users
+paths:
+  "/users":
+    post:
+      summary: Creates a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  surname:
+                    type: string
+                  patronymic:
+                    type: string
+                  email:
+                    type: string
+                  age:
+                    type: integer
+                  nationality:
+                    type: string
+                  country:
+                    type: string
+                  gender:
+                    type: string
+                  user_full_name:
+                    type: string
+                required:
+                - id
+                - name
+                - surname
+                - patronymic
+                - email
+                - age
+                - nationality
+                - country
+                - gender
+                - user_full_name
+        '422':
+          description: unprocessable_entity
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    additionalProperties:
+                      type: array
+                      items:
+                        type: string
+                required:
+                - errors
+        '400':
+          description: bad_request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Иван
+                surname:
+                  type: string
+                  example: Иванов
+                patronymic:
+                  type: string
+                  example: Иванович
+                email:
+                  type: string
+                  example: ivan@example.com
+                age:
+                  type: integer
+                  example: 30
+                nationality:
+                  type: string
+                  example: Russian
+                country:
+                  type: string
+                  example: Russia
+                gender:
+                  type: string
+                  example: male
+                  enum:
+                  - male
+                  - female
+                skills:
+                  type: string
+                  example: Ruby, Rails
+                interests:
+                  type: array
+                  items:
+                    type: string
+                  example:
+                  - programming
+                  - gaming
+              required:
+              - name
+              - surname
+              - patronymic
+              - email
+              - age
+              - nationality
+              - country
+              - gender
+servers:
+- url: http://localhost:3000
+  description: Local server

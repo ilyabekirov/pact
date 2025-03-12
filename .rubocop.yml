@@ -71,7 +71,6 @@ Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
 Layout/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
   EnforcedStyleForEmptyBraces: no_space
 
 Lint/AmbiguousBlockAssociation:
@@ -233,9 +232,6 @@ Style/SingleLineMethods:
 
 Style/StringConcatenation:
   Enabled: false
-
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
 
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
